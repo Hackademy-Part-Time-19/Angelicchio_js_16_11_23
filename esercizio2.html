@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let operazione=1;
+        let conto=0;
+        let movimento=0;
+        while(operazione>0){
+            operazione=parseInt(prompt("Scegli operazione: 1 prelievo, 2 versamento, 3 saldo, 0 esci"))
+            if(operazione==1){
+                movimento=parseInt(prompt("Quanto si vuole prelevare?"));
+                if(movimento>conto){
+                    alert("Il quantitativo del prelievo supera il saldo disponibile");
+                }
+                else{
+                    conto=conto-movimento;
+                    alert("Prelievo eseguito, saldo attuale = "+conto);
+                }
+            }
+            else if(operazione==2){
+                movimento=parseInt(prompt("Quanto si vuole versare?"));
+                conto=conto+movimento;
+                alert("Versamento eseguito, saldo attuale = "+conto);
+            }
+            else if(operazione==3){
+                alert("Saldo attuale = "+conto);
+            }
+            else if(operazione==0){
+                alert("Arrivederci");
+            }
+            else{
+                alert("ATTENZIONE: operazione non riconosciuta");
+            }
+        }
+
+    </script>
+</body>
+</html>
